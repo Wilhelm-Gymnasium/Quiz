@@ -3,16 +3,19 @@ package de.wilhelmgym.jeopardy;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class MainActivity extends AppCompatActivity {
 
-    @InjectView(R.id.test) TextView test;
-
     /* TODO App icon */
+
+    @InjectView(R.id.easy) FrameLayout easy;
+    @InjectView(R.id.normal) FrameLayout normal;
+    @InjectView(R.id.hard) FrameLayout hard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,17 +23,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
 
-        //TODO create category choosing layout
-
-        test.setOnClickListener(new View.OnClickListener() {
+        //TODO open GameActivity on click. "Intent"s should be used
+        easy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(v.getVisibility() == View.VISIBLE) {
-                    v.setVisibility(View.INVISIBLE);
-                }
-                else{
-                    v.setVisibility(View.VISIBLE);
-                }
+                Toast.makeText(MainActivity.this, "This should create a new easy game.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        normal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "This should create a new normal game.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        hard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "This should create a new hard game.", Toast.LENGTH_SHORT).show();
             }
         });
     }

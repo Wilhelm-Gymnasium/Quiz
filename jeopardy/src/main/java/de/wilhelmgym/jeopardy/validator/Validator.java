@@ -2,7 +2,7 @@ package de.wilhelmgym.jeopardy.validator;
 
 import de.wilhelmgym.jeopardy.structure.Question;
 
-//Börgi & Nilsi
+//BÃ¶rgi & Nilsi
 
 public class Validator {
 

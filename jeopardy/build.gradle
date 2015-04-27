@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+def versionMajor = 0
+def versionMinor = 1
+def versionPatch = 0
+def versionBuild = 0 // bump for dogfood builds, public betas, etc.
+
 android {
     compileSdkVersion 22
     buildToolsVersion "21.1.2"
@@ -8,11 +13,12 @@ android {
         applicationId "de.wilhelmgym.jeopardy"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
     }
     buildTypes {
         release {
+            //TODO enable this for release (later)
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

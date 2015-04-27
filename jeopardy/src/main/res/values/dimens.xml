@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wiwi -->
+<resources>
+
+    <dimen name="baseline">8dp</dimen>
+    <dimen name="baseline_content">72dp</dimen>
+
+</resources>
