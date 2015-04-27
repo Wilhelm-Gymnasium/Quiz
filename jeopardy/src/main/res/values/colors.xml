@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wiwi -->
+<resources>
+    <!-- TODO find better colors than these here: http://www.google.com/design/spec/style/color.html#color-color-palette -->
+    <color name="material_indigo_500">#3F51B5</color>
+    <color name="material_indigo_700">#303F9F</color>
+    <color name="material_amber_a400">#FFC400</color>
+    <color name="material_pink_a200">#FF4081</color>
+
+</resources>
