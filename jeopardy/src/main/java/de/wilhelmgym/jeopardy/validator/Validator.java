@@ -20,42 +20,43 @@ public class Validator {
      * @param question The question with the right answer in it
      * @param answer The answer to check
      * @return A double value where 0 < x <= 1.
-     *         Zero should be returned with no congruence. One should be returned if the answer {@code equals()} the right answer.
+     * Zero should be returned with no congruence. One should be returned if the answer {@code equals()} the right answer.
      */
 
-    public static double MULTIPLIER_FOR_FORGOTTEN=1.0;
-    public static double MULTIPLIER_FOR_SWAPPED=1.0;
-    public static double MULTIPLIER_FOR_WRONG=1.0;
-    public static double MULTIPLIER_FOR_ADDED=1.0;
-    public static double MULTIPLIER_FOR_ALL=1.0;
-
-    public double validate(Question question, String answer){
-
-        String right = "abcde"; // question.getrightanswer();
-
-        right=right.toLowerCase();
-        answer=answer.toLowerCase();
+    public static double MULTIPLIER_FOR_FORGOTTEN = 1.0;
+    public static double MULTIPLIER_FOR_SWAPPED = 1.0;
+    public static double MULTIPLIER_FOR_WRONG = 1.0;
+    public static double MULTIPLIER_FOR_ADDED = 1.0;
+    public static double MULTIPLIER_FOR_CASEFALSE  = 1.0;
+    public static double MULTIPLIER_FOR_ALL = 1.0;
 
 
+    public double validate(Question question, String answer) {
 
-        if(right.equals(answer))
-        {
+        String right = "abcde"; //TODO question.getrightanswer();
+
+        //right = right.toLowerCase();
+        //answer = answer.toLowerCase();
+
+
+        if (right.equals(answer)) {
             return 1;
-        }
-        else
-        {
-            int countOfWrongLetters =0;
-            int countOfSwappedLetters=0;
-            int countOfForgottenLetters=0;
-            int countOfAddedLetters=0;
+        } else {
 
+            int countOfWrongLetters = 0;
+            int countOfSwappedLetters = 0;
+            int countOfForgottenLetters = 0;
+            int countOfAddedLetters = 0;
+            int countOfCaseFalse=0;
+
+            /*
             for(int i = 0; i< right.length(); i++)
             {
-                if(right.charAt(i+countOfForgottenLetters)!=answer.charAt(i)) //TODO NullPointerException Fixing
+                if(right.charAt(i+countOfForgottenLetters-countOfAddedLetters)!=answer.charAt(i)) //TODO NullPointerException Fixing
                 {
-                    if((i+countOfForgottenLetters+1<right.length())&&(right.charAt(i+countOfForgottenLetters+1)==answer.charAt(i)))
+                    if((i+countOfForgottenLetters-countOfAddedLetters+1<right.length())&&(right.charAt(i+countOfForgottenLetters-countOfAddedLetters+1)==answer.charAt(i)))
                     {
-                        if(right.charAt(i+countOfForgottenLetters)==answer.charAt(i+1))
+                        if(right.charAt(i+countOfForgottenLetters-countOfAddedLetters)==answer.charAt(i+1))
                         {
                             countOfSwappedLetters++;
                         }
@@ -71,8 +72,11 @@ public class Validator {
                     }
                 }
             }
+            */
 
-            double imprecision = ((countOfWrongLetters*MULTIPLIER_FOR_WRONG+countOfSwappedLetters*MULTIPLIER_FOR_SWAPPED+countOfForgottenLetters*MULTIPLIER_FOR_FORGOTTEN+countOfAddedLetters*MULTIPLIER_FOR_ADDED)/right.length())*MULTIPLIER_FOR_ALL;
+
+
+            double imprecision = ((countOfWrongLetters*MULTIPLIER_FOR_WRONG+countOfSwappedLetters*MULTIPLIER_FOR_SWAPPED+countOfForgottenLetters*MULTIPLIER_FOR_FORGOTTEN+countOfAddedLetters*MULTIPLIER_FOR_ADDED+countOfCaseFalse*MULTIPLIER_FOR_CASEFALSE)/right.length())*MULTIPLIER_FOR_ALL;
 
             if(imprecision>1)
             {
@@ -80,11 +84,36 @@ public class Validator {
             }
 
             return 1-imprecision;
+
+
         }
 
 
     }
 
+    public int checkSwappedLetters(String right, String answer)
+    {
+        return 0;
+    }
 
+    public int checkCaseOfLetters(String right, String answer)
+    {
+        return 0;
+    }
+
+    public int checkAddedLetters(String right, String answer)
+    {
+        return 0;
+    }
+
+    public int checkForgottenLetters(String right, String answer)
+    {
+        return 0;
+    }
+
+    public int checkWrongLetters(String right, String answer)
+    {
+        return 0;
+    }
 
 }
