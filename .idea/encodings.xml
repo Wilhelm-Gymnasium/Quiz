@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" useUTFGuessing="false" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/jeopardy/build.gradle" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jeopardy/src/main/java/de/wilhelmgym/jeopardy/MainActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jeopardy/src/main/java/de/wilhelmgym/jeopardy/structure/Answer.java" charset="UTF-8" />
@@ -8,3 +8,4 @@
     <file url="file://$PROJECT_DIR$/jeopardy/src/main/java/de/wilhelmgym/jeopardy/validator/Validator.java" charset="UTF-8" />
   </component>
 </project>
+

@@ -23,23 +23,27 @@ public class Validator {
      * Zero should be returned with no congruence. One should be returned if the answer {@code equals()} the right answer.
      */
 
-    public static double MULTIPLIER_FOR_FORGOTTEN = 1.0;
-    public static double MULTIPLIER_FOR_SWAPPED = 1.0;
-    public static double MULTIPLIER_FOR_WRONG = 1.0;
-    public static double MULTIPLIER_FOR_ADDED = 1.0;
-    public static double MULTIPLIER_FOR_CASEFALSE  = 1.0;
-    public static double MULTIPLIER_FOR_ALL = 1.0;
+    public static final double MULTIPLIER_FOR_FORGOTTEN = 1.0;
+    public static final double MULTIPLIER_FOR_SWAPPED = 1.0;
+    public static final double MULTIPLIER_FOR_WRONG = 1.0;
+    public static final double MULTIPLIER_FOR_ADDED = 1.0;
+    public static final double MULTIPLIER_FOR_CASEFALSE  = 1.0;
+    public static final double MULTIPLIER_FOR_ALL = 1.0;
+
+    private String answer;
+    private String right;
 
 
     public double validate(Question question, String answer) {
 
-        String right = "abcde"; //TODO question.getrightanswer();
+        this.right = "abcde"; //TODO question.getrightanswer();
+        this.answer=answer;
 
         //right = right.toLowerCase();
         //answer = answer.toLowerCase();
 
 
-        if (right.equals(answer)) {
+        if (this.right.equals(this.answer)) {
             return 1;
         } else {
 
@@ -48,6 +52,17 @@ public class Validator {
             int countOfForgottenLetters = 0;
             int countOfAddedLetters = 0;
             int countOfCaseFalse=0;
+
+            countOfCaseFalse=checkCaseOfLetters();
+
+
+            ValidatorWorkingStructure org = new ValidatorWorkingStructure(this.right);
+
+            org.setReferences(this.answer);
+
+
+
+
 
             /*
             for(int i = 0; i< right.length(); i++)
@@ -96,9 +111,33 @@ public class Validator {
         return 0;
     }
 
-    public int checkCaseOfLetters(String right, String answer)
+    public int checkCaseOfLetters()
     {
-        return 0;
+        int steps =0;
+        int countOfCaseFalse = 0;
+
+        String rightLowerCase = this.right.toLowerCase();
+        String answerLowerCase = this.answer.toLowerCase();
+
+        if(right.length()<answer.length())
+        {
+            steps=right.length();
+        }
+        else
+        {
+            steps=answer.length();
+        }
+
+        for(int a=0; a<steps;a++)
+        {
+            if((right.charAt(a)!=answer.charAt(a)&&(rightLowerCase.charAt(a)==answerLowerCase.charAt(a))))
+            {
+                answer=""+answer.substring(0,a)+right.charAt(a)+answer.substring(a+1,answer.length());
+                countOfCaseFalse++;
+            }
+        }
+
+        return countOfCaseFalse;
     }
 
     public int checkAddedLetters(String right, String answer)
