@@ -4,7 +4,7 @@ package de.wilhelmgym.jeopardy.structure;
 
 import java.util.ArrayList;
 
-public class Answer extends ArrayList<String> {
+public class Answers extends ArrayList<String> {
 
     //The idea is to have multiple possible answers but one that will be shown if the answer was incorrect.
 

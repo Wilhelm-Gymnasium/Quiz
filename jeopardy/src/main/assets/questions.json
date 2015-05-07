@@ -1,0 +1,18 @@
+[
+    {
+        "level" : "NOOB",
+        "question": "Wie heißt Merkel mit Vornamen?",
+        "answers" : [
+            "Angela", "Anette"
+        ],
+        "preferredAnswerPosition" : 0
+    },
+    {
+        "level" : "NOOB",
+        "question": "Wie heißt Johannes Bruder?",
+        "answers" : [
+            "Jakob", "Heinrich", "Jan Heinrich"
+        ],
+        "preferredAnswerPosition" : 1
+    }
+]

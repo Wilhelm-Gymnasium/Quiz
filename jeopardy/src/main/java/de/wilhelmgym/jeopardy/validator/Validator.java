@@ -27,7 +27,7 @@ public class Validator {
     public static double MULTIPLIER_FOR_SWAPPED = 1.0;
     public static double MULTIPLIER_FOR_WRONG = 1.0;
     public static double MULTIPLIER_FOR_ADDED = 1.0;
-    public static double MULTIPLIER_FOR_CASEFALSE  = 1.0;
+    public static double MULTIPLIER_FOR_CASEFALSE = 1.0;
     public static double MULTIPLIER_FOR_ALL = 1.0;
 
 
@@ -47,7 +47,8 @@ public class Validator {
             int countOfSwappedLetters = 0;
             int countOfForgottenLetters = 0;
             int countOfAddedLetters = 0;
-            int countOfCaseFalse=0;
+            int countOfCaseFalse = 0;
+
 
             /*
             for(int i = 0; i< right.length(); i++)
@@ -75,15 +76,13 @@ public class Validator {
             */
 
 
+            double imprecision = ((countOfWrongLetters * MULTIPLIER_FOR_WRONG + countOfSwappedLetters * MULTIPLIER_FOR_SWAPPED + countOfForgottenLetters * MULTIPLIER_FOR_FORGOTTEN + countOfAddedLetters * MULTIPLIER_FOR_ADDED + countOfCaseFalse * MULTIPLIER_FOR_CASEFALSE) / right.length()) * MULTIPLIER_FOR_ALL;
 
-            double imprecision = ((countOfWrongLetters*MULTIPLIER_FOR_WRONG+countOfSwappedLetters*MULTIPLIER_FOR_SWAPPED+countOfForgottenLetters*MULTIPLIER_FOR_FORGOTTEN+countOfAddedLetters*MULTIPLIER_FOR_ADDED+countOfCaseFalse*MULTIPLIER_FOR_CASEFALSE)/right.length())*MULTIPLIER_FOR_ALL;
-
-            if(imprecision>1)
-            {
-                imprecision=1;
+            if (imprecision > 1) {
+                imprecision = 1;
             }
 
-            return 1-imprecision;
+            return 1 - imprecision;
 
 
         }
@@ -91,28 +90,23 @@ public class Validator {
 
     }
 
-    public int checkSwappedLetters(String right, String answer)
-    {
+    public int checkSwappedLetters(String right, String answer) {
         return 0;
     }
 
-    public int checkCaseOfLetters(String right, String answer)
-    {
+    public int checkCaseOfLetters(String right, String answer) {
         return 0;
     }
 
-    public int checkAddedLetters(String right, String answer)
-    {
+    public int checkAddedLetters(String right, String answer) {
         return 0;
     }
 
-    public int checkForgottenLetters(String right, String answer)
-    {
+    public int checkForgottenLetters(String right, String answer) {
         return 0;
     }
 
-    public int checkWrongLetters(String right, String answer)
-    {
+    public int checkWrongLetters(String right, String answer) {
         return 0;
     }
 
