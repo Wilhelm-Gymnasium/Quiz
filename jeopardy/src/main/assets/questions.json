@@ -1,5 +1,4 @@
 [
-    /* Template:
     {
         "level" : "NOOB|EASY|MEDIUM|ADVANCED|HARD|EXTREME",
         "question": "Der Fragetext?",
@@ -8,7 +7,6 @@
         ],
         "preferredAnswerPosition" : 2
     },
-    */
     {
         "level" : "EASY",
         "question": "Wie heißt die Deutsche Bundeskanzlerin?",
