@@ -1,9 +1,19 @@
 [
+    /* Template:
     {
-        "level" : "NOOB",
-        "question": "Wie heißt Merkel mit Vornamen?",
+        "level" : "NOOB|EASY|MEDIUM|ADVANCED|HARD|EXTREME",
+        "question": "Der Fragetext?",
         "answers" : [
-            "Angela", "Anette"
+            "Antwort 1", "Antwort 2", "Antwort 3 (Soll angezeigt werden)", "Antwort 4", "Antwort 5", "Antwort 6"
+        ],
+        "preferredAnswerPosition" : 2
+    },
+    */
+    {
+        "level" : "EASY",
+        "question": "Wie heißt die Deutsche Bundeskanzlerin?",
+        "answers" : [
+            "Angela Merkel", "Angela Dorothea Merkel", "Angela Kasner", "Angela Dorothea Kasner"
         ],
         "preferredAnswerPosition" : 0
     },
