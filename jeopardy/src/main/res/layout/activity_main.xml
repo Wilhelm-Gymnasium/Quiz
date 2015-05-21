@@ -1,19 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Wiwi -->
+<?xml version="1.0" encoding="utf-8"?><!-- Wiwi -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="de.wilhelmgym.jeopardy.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="de.wilhelmgym.jeopardy.MainActivity">
 
     <FrameLayout
         android:id="@+id/easy"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:foreground="?attr/selectableItemBackground"
-        android:background="@color/material_indigo_500">
+        android:background="@color/material_indigo_500"
+        android:foreground="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Kurz"
+            android:textColor="@color/white"
+            android:textSize="15mm"
+            android:textStyle="italic" />
 
         <!-- TODO
         Add TextView and an ImageView with an icon for each difficulty.
@@ -28,8 +36,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:foreground="?attr/selectableItemBackground"
-        android:background="@color/material_pink_a200">
+        android:background="@color/material_indigo_500"
+        android:foreground="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Mittel"
+            android:textColor="@color/white"
+            android:textSize="15mm"
+            android:textStyle="italic" />
 
     </FrameLayout>
 
@@ -38,9 +55,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:foreground="?attr/selectableItemBackground"
-        android:background="@color/material_amber_a400">
+        android:background="@color/material_indigo_500"
+        android:foreground="?attr/selectableItemBackground">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Lang"
+            android:textColor="@color/white"
+            android:textSize="15mm"
+            android:textStyle="italic" />
     </FrameLayout>
 
 </LinearLayout>

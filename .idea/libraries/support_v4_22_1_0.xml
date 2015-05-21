@@ -2,12 +2,10 @@
   <library name="support-v4-22.1.0">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/jeopardy/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/res" />
-      <root url="jar://$PROJECT_DIR$/jeopardy/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/libs/internal_impl-22.1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/jeopardy/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jeopardy/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.0/libs/internal_impl-22.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://C:/Program Files (x86)/Android/android-sdk/extras/android/m2repository/com/android/support/support-v4/22.1.0/support-v4-22.1.0-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
