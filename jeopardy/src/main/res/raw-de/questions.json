@@ -5,6 +5,7 @@
         "answers" : [
             "Antwort 1", "Antwort 2", "Antwort 3 (Soll angezeigt werden)", "Antwort 4", "Antwort 5", "Antwort 6"
         ],
+        "category": "Template",
         "preferredAnswerPosition" : 2
     },
     {
@@ -13,6 +14,7 @@
         "answers" : [
             "Angela Merkel", "Angela Dorothea Merkel", "Angela Kasner", "Angela Dorothea Kasner"
         ],
+        "category": "Politik",
         "preferredAnswerPosition" : 0
     },
     {
@@ -21,6 +23,7 @@
         "answers" : [
             "Jakob", "Heinrich", "Jan Heinrich"
         ],
+        "category": "Trivia",
         "preferredAnswerPosition" : 1
     }
 ]

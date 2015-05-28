@@ -1,6 +1,6 @@
 package de.wilhelmgym.jeopardy.structure;
 
-//Luci & Yanni
+//Luci & Wiwi
 
 public class Question {
 
