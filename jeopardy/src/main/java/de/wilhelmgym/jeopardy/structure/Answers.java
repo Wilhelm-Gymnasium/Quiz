@@ -1,6 +1,6 @@
 package de.wilhelmgym.jeopardy.structure;
 
-//Luci & Yanni
+//Luci & Wiwi
 
 import java.util.ArrayList;
 import java.util.Collection;
