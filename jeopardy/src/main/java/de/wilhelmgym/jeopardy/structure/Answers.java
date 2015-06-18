@@ -1,6 +1,6 @@
 package de.wilhelmgym.jeopardy.structure;
 
-//Luci & Wiwi
+//Wiwi
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,6 +10,10 @@ public class Answers extends ArrayList<String> {
     //The idea is to have multiple possible answers but one that will be shown if the answer was incorrect.
 
     private int preferredAnswerPosition;
+
+    public String getPreferredAnswer() {
+        return get(preferredAnswerPosition);
+    }
 
     public int getPreferredAnswerPosition() {
         return preferredAnswerPosition;

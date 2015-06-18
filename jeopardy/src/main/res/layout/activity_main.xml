@@ -4,14 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="4"
+    android:gravity="bottom"
+    android:background="@color/material_indigo_500"
     tools:context="de.wilhelmgym.jeopardy.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:title="@string/app_name"
+        android:minHeight="?android:actionBarSize"
+        android:elevation="8dp"/>
 
     <FrameLayout
         android:id="@+id/easy"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/material_indigo_500"
         android:foreground="?attr/selectableItemBackground">
 
         <TextView
@@ -36,7 +46,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/material_indigo_500"
         android:foreground="?attr/selectableItemBackground">
 
         <TextView
@@ -55,7 +64,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/material_indigo_500"
         android:foreground="?attr/selectableItemBackground">
 
         <TextView
