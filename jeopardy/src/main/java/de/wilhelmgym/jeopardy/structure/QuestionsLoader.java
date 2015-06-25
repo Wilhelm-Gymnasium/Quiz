@@ -1,7 +1,6 @@
 package de.wilhelmgym.jeopardy.structure;
 
 import android.content.res.Resources;
-import android.util.JsonReader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,6 +43,16 @@ public class QuestionsLoader {
             e.printStackTrace();
             return new ArrayList<>();
         }
+    }
+
+    public static List<String> loadCategories(String json) {
+        //TODO
+        return null;
+    }
+
+    public static List<String> loadCategories(Resources resources) {
+        //TODO
+        return null;
     }
 
 }
