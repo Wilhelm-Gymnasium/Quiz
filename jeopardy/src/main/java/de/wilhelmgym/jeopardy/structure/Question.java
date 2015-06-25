@@ -136,7 +136,7 @@ public class Question {
         this.answers = answers;
     }
 
-    public String getCategory(String category) {
+    public String getCategory() {
         return category;
     }
 
