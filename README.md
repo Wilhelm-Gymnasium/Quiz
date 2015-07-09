@@ -1,2 +1,2 @@
-# Jeopardy
-Jeopardy quiz game for Android
+# Quiz (title not yet defined)
+Quiz game for Android
