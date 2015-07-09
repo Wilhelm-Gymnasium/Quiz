@@ -23,7 +23,6 @@ public class Validator {
      * Zero should be returned with no congruence. One should be returned if the answer {@code equals()} the right answer.
      */
     public double validate(Question question, String answer) {
-        return -1;
-    }
+        return -1;    }
 
 }
