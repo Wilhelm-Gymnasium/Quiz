@@ -8,8 +8,13 @@ import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import de.wilhelmgym.quiz.structure.Answers;
+import de.wilhelmgym.quiz.structure.Question;
+import de.wilhelmgym.quiz.validator.Validator;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String TAG = "Quiz";
 
     /* TODO App icon */
 
@@ -28,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "This should create a new easy game.", Toast.LENGTH_SHORT).show();
+
+                Answers answers = new Answers();
+                answers.add("answer0 answer2 answer3");
+
+                Validator validator = new Validator();
+                validator.validate(new Question("question", answers, "category"), "answer1 answer2 answer4");
             }
         });
         normal.setOnClickListener(new View.OnClickListener() {

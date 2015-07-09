@@ -31,4 +31,5 @@ dependencies {
     compile 'com.android.support:support-v4:22.2.0'
 
     compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'info.debatty:java-string-similarity:0.12'
 }

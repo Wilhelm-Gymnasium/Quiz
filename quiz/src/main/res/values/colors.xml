@@ -2,7 +2,6 @@
 <resources>
 
     <!-- TODO find better colors than these here: http://www.google.com/design/spec/style/color.html#color-color-palette -->
-    <!-- Colors should match Jeopardy's color scheme. Do a quick Google search to find out -->
     <!-- material_name_(a)XXX(_XX) -->
 
     <color name="material_indigo_500">#3F51B5</color>

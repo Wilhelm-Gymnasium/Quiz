@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jeopardy!</string>
-    <string name="title_activity_game">GameActivity</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Quiz</string>
+    <string name="title_activity_game">Game</string>
     <string name="action_settings">Settings</string>
 </resources>
