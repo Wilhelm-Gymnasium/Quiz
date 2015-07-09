@@ -7,7 +7,7 @@
     android:weightSum="4"
     android:gravity="bottom"
     android:background="@color/material_indigo_500"
-    tools:context="de.wilhelmgym.jeopardy.MainActivity">
+    tools:context="de.wilhelmgym.quiz.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"

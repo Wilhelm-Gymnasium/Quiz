@@ -10,7 +10,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "de.wilhelmgym.jeopardy"
+        applicationId "de.wilhelmgym.quiz"
         minSdkVersion 14
         targetSdkVersion 22
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
@@ -26,9 +26,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.1.0'
-    compile 'com.android.support:cardview-v7:22.1.0'
-    compile 'com.android.support:support-v4:22.1.0'
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:cardview-v7:22.2.0'
+    compile 'com.android.support:support-v4:22.2.0'
 
     compile 'com.jakewharton:butterknife:6.1.0'
 }
