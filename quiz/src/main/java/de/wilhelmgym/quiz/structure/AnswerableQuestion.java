@@ -3,7 +3,7 @@ package de.wilhelmgym.quiz.structure;
 import android.text.TextUtils;
 
 public class AnswerableQuestion extends Question {
-    String answer = "";
+    String answer = null;
 
     public AnswerableQuestion(String question, Answers answer, String category, int level) {
         super(question, answer, category, level);

@@ -34,7 +34,18 @@ public class Question {
     private String category;
     private int level;
 
-    //TODO JSON parsing
+    public Question(String question, Answers answer, String category, int level) {
+        this.question = question;
+        this.answers = answer;
+        this.category = category;
+        this.level = level;
+    }
+
+    public Question(String question, Answers answer, String category) {
+        this(question, answer, category, MEDIUM);
+    }
+
+    //TODO test JSON parsing
     public static void fromJson(String json){
         try {
             fromJson(new JSONObject(json));
@@ -42,6 +53,7 @@ public class Question {
             e.printStackTrace();
         }
     }
+
     public static Question fromJson(JSONObject json){
         String question;
         Answers answers = new Answers();
@@ -107,17 +119,6 @@ public class Question {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public Question(String question, Answers answer, String category, int level) {
-        this.question = question;
-        this.answers = answer;
-        this.category = category;
-        this.level = level;
-    }
-
-    public Question(String question, Answers answer, String category) {
-        this(question, answer, category, MEDIUM);
     }
 
     public String getQuestion() {

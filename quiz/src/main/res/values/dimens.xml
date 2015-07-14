@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Wiwi -->
 <resources>
 
     <dimen name="baseline">8dp</dimen>
     <dimen name="baseline_content">72dp</dimen>
+    <dimen name="baseline_1dp">1dp</dimen>
+    <dimen name="baseline_half">4dp</dimen>
+    <dimen name="baseline_double">16dp</dimen>
+
+    <dimen name="elevation_toolbar">4dp</dimen>
+    <dimen name="elevation_fab">6dp</dimen>
+    <dimen name="translation_z_fab_pressed">12dp</dimen>
+
+    <dimen name="tile_label_height">48dp</dimen>
 
 </resources>

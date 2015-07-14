@@ -16,6 +16,7 @@ import de.wilhelmgym.quiz.R;
 
 public class QuestionsLoader {
 
+    //TODO test JSON parsing
     public static List<Question> load(String json){
         List<Question> questions = new ArrayList<>();
         try {
