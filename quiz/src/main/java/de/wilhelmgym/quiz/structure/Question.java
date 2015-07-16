@@ -45,7 +45,7 @@ public class Question {
         this(question, answer, category, MEDIUM);
     }
 
-    //TODO test JSON parsing
+    //TODO test JSON parsing (Heini)
     public static void fromJson(String json){
         try {
             fromJson(new JSONObject(json));

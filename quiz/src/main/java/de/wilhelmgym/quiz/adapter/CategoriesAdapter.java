@@ -21,7 +21,7 @@ public class CategoriesAdapter extends GridAdapter {
 
         Resources resources = getContext().getResources();
 
-        //TODO find or shoot real images (license needed)
+        //TODO find, draw or shoot real images (license needed) (Wiwi)
         int[] imageResIds = {
                 R.mipmap.category0,
                 R.mipmap.category1,
@@ -46,7 +46,7 @@ public class CategoriesAdapter extends GridAdapter {
                 } else {
                     swatch = palette.getMutedSwatch();
                 }
-                //TODO animate color change
+                //TODO animate color change (Börgi)
                 holder.label.setBackgroundColor(swatch.getRgb());
                 holder.label.setTextColor(swatch.getTitleTextColor());
             }

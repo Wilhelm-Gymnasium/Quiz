@@ -39,9 +39,9 @@ public class LevelsActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new GridAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(GridAdapter adapter, int position) {
-                //TODO pass level as extra
-                //TODO animations
-                startActivity(new Intent(LevelsActivity.this, CategoriesActivity.class));
+                //TODO pass level as extra (Heini)
+                //TODO animations (Börgi)
+                startActivity(new Intent(LevelsActivity.this, QuestionActivity.class));
             }
         });
         grid.setAdapter(adapter);

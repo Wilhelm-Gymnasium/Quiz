@@ -20,7 +20,7 @@
         android:layout_weight="1"
         android:clipChildren="false">
 
-        <!-- TODO optional: add question information here (level, category) -->
+        <!-- TODO optional: add question information here (level, category) (Luci) -->
 
         <ScrollView
             android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                 app:pressedTranslationZ="@dimen/translation_z_fab_pressed"
                 app:rippleColor="@color/material_pink_a200" />
 
-            <!-- TODO create 'check' icon for this -->
+            <!-- TODO create 'check' icon for this (Heini) -->
 
         </com.github.jorgecastilloprz.FABProgressCircle>
 
