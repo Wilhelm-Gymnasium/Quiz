@@ -15,12 +15,12 @@ import info.debatty.java.stringsimilarity.SorensenDice;
 
 public class Validator {
 
-    //TODO Improve these weights:
-    private static final double WEIGHT_NORMALIZED_LEVENSHTEIN = 1;
-    private static final double WEIGHT_JARO_WINKLER = 1;
-    private static final double WEIGHT_COSINE = 1;
-    private static final double WEIGHT_JACCARD = 1;
-    private static final double WEIGHT_SORENSEN_DICE = 1;
+    //TODO Improve these weights (write you suggestion behind the current weights): (All)
+    private static final double WEIGHT_NORMALIZED_LEVENSHTEIN = 1; //Luci: 1, Wiwi: 1, Börgi: 1, Heini: 1
+    private static final double WEIGHT_JARO_WINKLER = 1; //Luci: 1, Wiwi: 1, Börgi: 1, Heini: 1
+    private static final double WEIGHT_COSINE = 1; //Luci: 1, Wiwi: 1, Börgi: 1, Heini: 1
+    private static final double WEIGHT_JACCARD = 1; //Luci: 1, Wiwi: 1, Börgi: 1, Heini: 1
+    private static final double WEIGHT_SORENSEN_DICE = 1; //Luci: 1, Wiwi: 1, Börgi: 1, Heini: 1
     
     /**
      * Checks the congruence of an answer with the right answer of a given question.

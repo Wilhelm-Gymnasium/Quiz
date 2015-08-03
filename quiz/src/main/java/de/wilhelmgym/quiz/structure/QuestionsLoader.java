@@ -16,7 +16,10 @@ import de.wilhelmgym.quiz.R;
 
 public class QuestionsLoader {
 
-    //TODO test JSON parsing
+    //TODO improve structure (Heini)
+
+    //TODO test JSON parsing (Heini)
+    //TODO javadoc (Heini)
     public static List<Question> load(String json){
         List<Question> questions = new ArrayList<>();
         try {
@@ -46,13 +49,21 @@ public class QuestionsLoader {
         }
     }
 
+    public static List<String> loadCategories(List<Question> questions) {
+        //TODO load categories (Luci)
+        //1. load all questions
+        //2. iterate through list
+        //3. write question's category in a list if not already exists
+        return null;
+    }
+
     public static List<String> loadCategories(String json) {
-        //TODO
+        //TODO see above (Luci)
         return null;
     }
 
     public static List<String> loadCategories(Resources resources) {
-        //TODO
+        //TODO see above (Luci)
         return null;
     }
 

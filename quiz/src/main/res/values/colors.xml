@@ -23,12 +23,12 @@
 
     <!-- Design colors -->
 
-    <!-- TODO choose colors -->
+    <!-- TODO choose colors (Wiwi, Luci) -->
     <color name="background_grid">@color/material_blue_grey_900</color>
     <color name="background_tile">@color/material_blue_grey_800</color>
     <color name="text_color_tile_label">@color/material_white</color>
 
-    <!-- TODO choose colors (noob:blue/green - extreme:red) -->
+    <!-- TODO choose colors (noob:blue/green - extreme:red) (Wiwi, Luci) -->
     <color name="background_tile_noob">@color/material_amber_a400</color>
     <color name="background_tile_easy">@color/material_indigo_500</color>
     <color name="background_tile_medium">@color/material_blue_grey_800</color>
@@ -36,7 +36,7 @@
     <color name="background_tile_hard">@color/material_indigo_900</color>
     <color name="background_tile_extreme">@color/material_deep_teal_500</color>
 
-    <!-- TODO choose colors (darker than tile backgrounds)-->
+    <!-- TODO choose colors (darker than tile backgrounds) (Wiwi, Luci) -->
     <color name="background_tile_label_noob">@color/material_amber_a400</color>
     <color name="background_tile_label_easy">@color/material_indigo_500</color>
     <color name="background_tile_label_medium">@color/material_blue_grey_800</color>
@@ -44,7 +44,7 @@
     <color name="background_tile_label_hard">@color/material_indigo_900</color>
     <color name="background_tile_label_extreme">@color/material_deep_teal_500</color>
 
-    <!-- TODO choose colors -->
+    <!-- TODO choose colors (Wiwi, Luci) -->
     <color name="text_color_tile_noob">@color/material_indigo_500</color>
     <color name="text_color_tile_easy">@color/material_amber_a400</color>
     <color name="text_color_tile_medium">@color/material_pink_a200</color>

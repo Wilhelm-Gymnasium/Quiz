@@ -20,7 +20,7 @@ public class LevelsAdapter extends GridAdapter {
 
         Resources resources = getContext().getResources();
 
-        //TODO create icons
+        //TODO create icons (Börgi)
         int[] iconResIds = {
                 R.mipmap.ic_launcher,
                 R.mipmap.ic_launcher,

@@ -39,9 +39,9 @@ public class CategoriesActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new GridAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(GridAdapter adapter, int position) {
-                //TODO pass category as extra
-                //TODO animations
-                startActivity(new Intent(CategoriesActivity.this, QuestionActivity.class));
+                //TODO pass category as extra (Heini)
+                //TODO animations (Börgi)
+                startActivity(new Intent(CategoriesActivity.this, LevelsActivity.class));
             }
         });
         grid.setAdapter(adapter);

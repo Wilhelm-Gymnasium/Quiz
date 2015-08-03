@@ -38,7 +38,7 @@ public class QuestionActivity extends AppCompatActivity {
         ButterKnife.inject(this);
         setSupportActionBar(toolbar);
 
-        //TODO improve question layout (with help)
+        //TODO improve question layout (with help) (Luci)
         answer.requestFocus();
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +65,7 @@ public class QuestionActivity extends AppCompatActivity {
             Validator validator = new Validator();
             validator.validate(new Question("Wie heißt die Deutsche Bundeskanzlerin (2015)?", answers, "Politik"), "Angelaa merkwl");
             //Fake END
-            // TODO implement real behavior
+            // TODO implement real behavior (Heini)
             return null;
         }
 
@@ -75,7 +75,7 @@ public class QuestionActivity extends AppCompatActivity {
             fabProgress.attachListener(new FABProgressListener() {
                 @Override
                 public void onFABProgressAnimationEnd() {
-                    // TODO start new activity (circular reveal)
+                    // TODO start new activity (circular reveal) (Heini)
                 }
             });
         }
