@@ -1,26 +1,52 @@
 package de.wilhelmgym.quiz.adapter;
 
+import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.PaintDrawable;
-import android.graphics.drawable.TransitionDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v7.graphics.Palette;
-import android.support.v7.widget.RecyclerView;
+import android.util.Property;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import de.wilhelmgym.quiz.R;
 
 public class CategoriesAdapter extends GridAdapter {
 
-
     public static Integer ANIMATIONLENGTH = 1500;
+    private final Property<TextView, Integer> PROPERTY_TEXT_COLOR = new Property<TextView, Integer>(Integer.class, "textColor") {
+        @Override
+        public Integer get(TextView object) {
+            return object.getTextColors().getDefaultColor();
+        }
+
+        @Override
+        public void set(TextView object, Integer value) {
+            object.setTextColor(value);
+        }
+    };
+    private final Property<TextView, Integer> PROPERTY_BACKGROUND_COLOR = new Property<TextView, Integer>(Integer.class, "backgroundColor") {
+        @Override
+        public Integer get(TextView object) {
+            Drawable background = object.getBackground();
+            if(background instanceof ColorDrawable){
+                return ((ColorDrawable) background).getColor();
+            }
+            return Color.BLACK;
+        }
+
+        @Override
+        public void set(TextView object, Integer value) {
+            object.setBackgroundColor(value);
+        }
+    };
 
     public CategoriesAdapter(Context context) {
         super(context);
@@ -44,10 +70,8 @@ public class CategoriesAdapter extends GridAdapter {
         Bitmap image = BitmapFactory.decodeResource(resources, imageResIds[position]);
 
         holder.image.setImageBitmap(image);
-
-        //holder.image.setAlpha(100);
-
         holder.image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
         Palette.from(image).resizeBitmapSize(500).generate(new Palette.PaletteAsyncListener() {
             @Override
             public void onGenerated(Palette palette) {
@@ -62,43 +86,23 @@ public class CategoriesAdapter extends GridAdapter {
                     swatch = palette.getMutedSwatch();
                 }
 
-                Integer BackgroundColorFrom = R.color.background_tile;
-                Integer BackgroundColorTo = swatch.getRgb();
-                ValueAnimator BackgroundColorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), BackgroundColorFrom, BackgroundColorTo);
-                BackgroundColorAnimation.setDuration(ANIMATIONLENGTH);
-                BackgroundColorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                ObjectAnimator animatorTextColor = ObjectAnimator.ofInt(holder.label, PROPERTY_TEXT_COLOR, swatch.getTitleTextColor());
+                animatorTextColor.setEvaluator(new ArgbEvaluator());
 
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animator) {
-                        holder.label.setBackgroundColor((Integer) animator.getAnimatedValue());
-                    }
+                ObjectAnimator animatorBackgroundColor = ObjectAnimator.ofInt(holder.label, PROPERTY_BACKGROUND_COLOR, swatch.getRgb());
+                animatorBackgroundColor.setEvaluator(new ArgbEvaluator());
 
-                });
-
-
-
-
-                Integer TextColorFrom = R.color.text_color_tile_label;
-                Integer TextColorTo = swatch.getTitleTextColor();
-                ValueAnimator TextColorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), TextColorFrom, TextColorTo);
-                TextColorAnimation.setDuration(ANIMATIONLENGTH);
-                TextColorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animator) {
-                        holder.label.setTextColor((Integer) animator.getAnimatedValue());
-                    }
-
-                });
-
-
-
-                BackgroundColorAnimation.start();
-                TextColorAnimation.start();
+                AnimatorSet animatorColors = new AnimatorSet();
+                animatorColors.playTogether(animatorTextColor, animatorBackgroundColor);
+                animatorColors.setDuration(resources.getInteger(android.R.integer.config_longAnimTime));
+                animatorColors.start();
             }
         });
 
         holder.label.setText(resources.getStringArray(R.array.categories)[position]);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            holder.label.setTransitionName(resources.getString(R.string.transition_name_levels_toolbar));
+        }
     }
 
     @Override

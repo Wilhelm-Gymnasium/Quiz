@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.support.v7.graphics.Palette;
 import android.widget.ImageView;
 
 import de.wilhelmgym.quiz.R;
@@ -33,35 +35,25 @@ public class LevelsAdapter extends GridAdapter {
         holder.image.setImageBitmap(icon);
         holder.image.setScaleType(ImageView.ScaleType.CENTER);
 
-        int[] textColorResIds = {
-                R.color.text_color_tile_noob,
-                R.color.text_color_tile_easy,
-                R.color.text_color_tile_medium,
-                R.color.text_color_tile_advanced,
-                R.color.text_color_tile_hard,
-                R.color.text_color_tile_extreme,
+        int[] colorResIds = {
+                R.color.noob,
+                R.color.easy,
+                R.color.medium,
+                R.color.advanced,
+                R.color.hard,
+                R.color.extreme,
         };
-        int[] backgroundLabelResIds = {
-                R.color.background_tile_label_noob,
-                R.color.background_tile_label_easy,
-                R.color.background_tile_label_medium,
-                R.color.background_tile_label_advanced,
-                R.color.background_tile_label_hard,
-                R.color.background_tile_label_extreme,
-        };
-        holder.label.setTextColor(resources.getColor(textColorResIds[position]));
-        holder.itemView.setBackgroundColor(resources.getColor(backgroundLabelResIds[position]));
+        Palette.Swatch swatch = new Palette.Swatch(resources.getColor(colorResIds[position]), 0);
+
+        holder.label.setTextColor(swatch.getTitleTextColor());
+        holder.label.setBackgroundColor(swatch.getRgb());
         holder.label.setText(resources.getStringArray(R.array.levels)[position]);
 
-        int[] backgroundResIds = {
-                R.color.background_tile_noob,
-                R.color.background_tile_easy,
-                R.color.background_tile_medium,
-                R.color.background_tile_advanced,
-                R.color.background_tile_hard,
-                R.color.background_tile_extreme,
-        };
-        holder.itemView.setBackgroundColor(resources.getColor(backgroundResIds[position]));
+
+        float[] hsl = swatch.getHsl();
+        hsl[1] *= 0.85;
+        hsl[2] *= 1.5;
+        holder.itemView.setBackgroundColor(Color.HSVToColor(hsl));
     }
 
     @Override

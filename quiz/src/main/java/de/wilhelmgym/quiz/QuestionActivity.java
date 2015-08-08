@@ -1,10 +1,15 @@
 package de.wilhelmgym.quiz;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,14 +38,23 @@ public class QuestionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            Transition sharedElementEnterTransition = TransitionInflater.from(this).inflateTransition(R.transition.levels_enter);
+            getWindow().setSharedElementEnterTransition(sharedElementEnterTransition);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         ButterKnife.inject(this);
         setSupportActionBar(toolbar);
 
+        animateToolbar();
+
         //TODO improve question layout (with help) (Luci)
         answer.requestFocus();
 
+        fab.setBackgroundTintList(getResources().getColorStateList(R.color.fab));
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +64,20 @@ public class QuestionActivity extends AppCompatActivity {
                 new ValidatorTask().execute();
             }
         });
+    }
+
+    private void animateToolbar() {
+        if (getIntent().hasExtra(LevelsActivity.EXTRA_LEVEL_COLOR)) {
+            Palette.Swatch swatch = new Palette.Swatch(getIntent().getIntExtra(LevelsActivity.EXTRA_LEVEL_COLOR, getResources().getColor(R.color.color_primary)), 0);
+            toolbar.setBackgroundColor(swatch.getRgb());
+            toolbar.setTitleTextColor(swatch.getTitleTextColor());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                float[] hsl = swatch.getHsl();
+                hsl[1] *= 0.75;
+                hsl[2] *= 0.95;
+                getWindow().setStatusBarColor(Color.HSVToColor(hsl));
+            }
+        }
     }
 
     private class ValidatorTask extends AsyncTask<Void, Void, Boolean> {
@@ -63,7 +91,7 @@ public class QuestionActivity extends AppCompatActivity {
             answers.add("Angela Dorothea Kasner");
 
             Validator validator = new Validator();
-            validator.validate(new Question("Wie heißt die Deutsche Bundeskanzlerin (2015)?", answers, "Politik"), "Angelaa merkwl");
+            validator.validate(new Question("Wie heißt die Deutsche Bundeskanzlerin (2015)?", answers, "Politik"), "Angela merkwl");
             //Fake END
             // TODO implement real behavior (Heini)
             return null;

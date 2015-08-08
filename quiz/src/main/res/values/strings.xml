@@ -29,4 +29,6 @@
         <item>Extreme</item>
     </string-array>
 
+    <string name="transition_name_levels_toolbar">levels_toolbar</string>
+
 </resources>

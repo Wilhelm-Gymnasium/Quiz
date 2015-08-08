@@ -12,7 +12,8 @@
         android:background="?attr/colorPrimary"
         android:elevation="@dimen/elevation_toolbar"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:transitionName="@string/transition_name_levels_toolbar" />
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -49,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom"
-            android:background="@color/material_white"
+            android:background="@color/white"
             android:clipToPadding="false"
             android:elevation="@dimen/elevation_toolbar"
             android:hint="@string/hint_answer"
@@ -66,7 +67,7 @@
             android:layout_margin="@dimen/baseline"
             android:elevation="@dimen/elevation_fab"
             android:gravity="center_vertical"
-            app:arcColor="@color/material_pink_a200"
+            app:arcColor="@color/fab_indicator"
             app:layout_anchor="@id/answer"
             app:layout_anchorGravity="top|right|end">
 
@@ -79,7 +80,7 @@
                 app:borderWidth="0dp"
                 app:elevation="@dimen/elevation_fab"
                 app:pressedTranslationZ="@dimen/translation_z_fab_pressed"
-                app:rippleColor="@color/material_pink_a200" />
+                app:rippleColor="@color/fab_ripple" />
 
             <!-- TODO create 'check' icon for this (Heini) -->
 

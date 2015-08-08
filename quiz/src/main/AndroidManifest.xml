@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Quiz">
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -23,12 +23,13 @@
 
         <activity
             android:name=".LevelsActivity"
-            android:label="@string/title_activity_levels"></activity>
+            android:label="@string/title_activity_levels"
+            android:theme="@style/Quiz.Levels" />
 
         <activity
             android:name=".QuestionActivity"
             android:label="@string/title_activity_question"
-            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
+            android:windowSoftInputMode="stateVisible|adjustResize" />
 
     </application>
 

@@ -1,6 +1,10 @@
 package de.wilhelmgym.quiz.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,11 +33,17 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onItemClick(GridAdapter.this, position);
+                Drawable labelBackground = holder.label.getBackground();
+                Palette.Swatch colors = new Palette.Swatch(Color.BLUE, 0);
+                if (labelBackground instanceof ColorDrawable) {
+                    listener.onItemClick(GridAdapter.this, position, holder, ((ColorDrawable) labelBackground).getColor());
+                } else {
+                    listener.onItemClick(GridAdapter.this, position, holder, context.getResources().getColor(R.color.background_tile));
+                }
             }
         };
     }
@@ -60,7 +70,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
     }
 
     public interface OnItemClickListener {
-        void onItemClick(GridAdapter adapter, int position);
+        void onItemClick(GridAdapter adapter, int position, ViewHolder holder, int color);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -82,6 +92,18 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
             if (listener != null) {
                 listener.onClick(v);
             }
+        }
+
+        public View getItemView() {
+            return itemView;
+        }
+
+        public ImageView getImage() {
+            return image;
+        }
+
+        public TextView getLabel() {
+            return label;
         }
     }
 }

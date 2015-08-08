@@ -11,7 +11,8 @@
         android:background="?attr/colorPrimary"
         android:elevation="@dimen/elevation_toolbar"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:transitionName="@string/transition_name_levels_toolbar" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/grid"

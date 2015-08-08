@@ -1,55 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Wiwi -->
 <resources>
-
-    <!-- Material colors -->
-    <!-- TODO find better colors than these here: http://www.google.com/design/spec/style/color.html#color-color-palette -->
-    <!-- material_name_(a)XXX(_XX) -->
-
-    <color name="material_indigo_500">#3F51B5</color>
-    <color name="material_indigo_700">#303F9F</color>
-    <color name="material_indigo_900">#1A237E</color>
-    <color name="material_indigo_a100">#8C9EFF</color>
-    <color name="material_indigo_a400">#3D5AFE</color>
-
-    <color name="material_blue_grey_900">#263238</color>
-    <color name="material_blue_grey_800">#37474F</color>
-
-    <color name="material_amber_a400">#FFC400</color>
-
-    <color name="material_pink_a200">#FF4081</color>
-
-    <color name="material_white">#ffffff</color>
-
-
     <!-- Design colors -->
+    <color name="color_primary">@color/indigo_500</color>
+    <color name="color_primary_dark">@color/indigo_700</color>
+    <color name="color_accent">@color/amber_a400</color>
 
     <!-- TODO choose colors (Wiwi, Luci) -->
-    <color name="background_grid">@color/material_blue_grey_900</color>
-    <color name="background_tile">@color/material_blue_grey_800</color>
-    <color name="text_color_tile_label">@color/material_white</color>
+    <color name="background_grid">@color/blue_grey_900</color>
+    <color name="background_tile">@color/blue_grey_800</color>
+    <color name="text_color_tile_label">@color/white</color>
 
-    <!-- TODO choose colors (noob:blue/green - extreme:red) (Wiwi, Luci) -->
-    <color name="background_tile_noob">@color/material_amber_a400</color>
-    <color name="background_tile_easy">@color/material_indigo_500</color>
-    <color name="background_tile_medium">@color/material_blue_grey_800</color>
-    <color name="background_tile_advanced">@color/material_pink_a200</color>
-    <color name="background_tile_hard">@color/material_indigo_900</color>
-    <color name="background_tile_extreme">@color/material_deep_teal_500</color>
+    <color name="fab">@color/light_green_600</color>
+    <color name="fab_indicator">@color/light_green_800</color>
+    <color name="fab_ripple">@color/light_green_900</color>
 
-    <!-- TODO choose colors (darker than tile backgrounds) (Wiwi, Luci) -->
-    <color name="background_tile_label_noob">@color/material_amber_a400</color>
-    <color name="background_tile_label_easy">@color/material_indigo_500</color>
-    <color name="background_tile_label_medium">@color/material_blue_grey_800</color>
-    <color name="background_tile_label_advanced">@color/material_pink_a200</color>
-    <color name="background_tile_label_hard">@color/material_indigo_900</color>
-    <color name="background_tile_label_extreme">@color/material_deep_teal_500</color>
-
-    <!-- TODO choose colors (Wiwi, Luci) -->
-    <color name="text_color_tile_noob">@color/material_indigo_500</color>
-    <color name="text_color_tile_easy">@color/material_amber_a400</color>
-    <color name="text_color_tile_medium">@color/material_pink_a200</color>
-    <color name="text_color_tile_advanced">@color/material_blue_grey_800</color>
-    <color name="text_color_tile_hard">@color/material_deep_teal_500</color>
-    <color name="text_color_tile_extreme">@color/material_indigo_900</color>
+    <!-- Level colors -->
+    <color name="noob">@color/indigo_500</color>
+    <color name="easy">@color/light_blue_500</color>
+    <color name="medium">@color/light_green_500</color>
+    <color name="advanced">@color/green_500</color>
+    <color name="hard">@color/amber_500</color>
+    <color name="extreme">@color/deep_orange_500</color>
 
 </resources>

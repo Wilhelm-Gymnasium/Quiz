@@ -2,10 +2,10 @@
 <!-- Wiwi -->
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/material_indigo_500</item>
-        <item name="colorPrimaryDark">@color/material_indigo_700</item>
-        <item name="colorAccent">@color/material_amber_a400</item>
+    <style name="Quiz" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
     </style>
 
 </resources>

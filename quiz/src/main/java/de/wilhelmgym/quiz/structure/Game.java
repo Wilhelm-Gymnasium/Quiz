@@ -1,6 +1,7 @@
 package de.wilhelmgym.quiz.structure;
 
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.util.Pair;
 
 import java.util.ArrayList;
@@ -9,11 +10,18 @@ import java.util.List;
 import java.util.Map;
 
 public class Game {
+
     Map<Pair<String, Integer>, AnswerableQuestion> questions = new HashMap<>();
 
-    public Game(Resources resources) {
+    private Game(Map<Pair<String, Integer>, AnswerableQuestion> questions) {
+        this.questions = questions;
+    }
+
+    public static Game loadFromResources(Resources resources) {
         List<Question> allQuestions = QuestionsLoader.load(resources);
         List<String> allCategories = QuestionsLoader.loadCategories(resources);
+
+        Map<Pair<String, Integer>, AnswerableQuestion> questions = new HashMap<>();
 
         //6 categories
         List<String> categories = new ArrayList<>(6);
@@ -39,5 +47,31 @@ public class Game {
 
             allQuestions.remove(r);
         }
+
+        return new Game(questions);
+    }
+
+    public static Game load(Bundle in) {
+
+        //TODO Load from bundle
+
+        return new Game(null);
+    }
+
+    public Bundle save() {
+        Bundle out = new Bundle();
+
+        //TODO Save to bundle
+
+        return out;
+    }
+
+    public boolean validate() {
+        //TODO Are there exactly 6 categories and 6 levels? (Luci)
+        return true;
+    }
+
+    public Map<Pair<String, Integer>, AnswerableQuestion> getQuestions() {
+        return questions;
     }
 }
