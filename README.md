@@ -1,2 +1,2 @@
-# Quiz (title not yet defined)
-Quiz game for Android
+# 6x6 *(Quiz)*
+Quiz game for Android with 6 categories and 6 skill levels
