@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Game {
 
-    Map<Pair<String, Integer>, AnswerableQuestion> questions = new HashMap<>();
+    private Map<Pair<String, Integer>, AnswerableQuestion> questions = new HashMap<>();
 
     private Game(Map<Pair<String, Integer>, AnswerableQuestion> questions) {
         this.questions = questions;
